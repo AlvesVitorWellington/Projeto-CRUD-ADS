@@ -119,7 +119,17 @@ public class PesquisaUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      
+      int linha = tabelaUsuario.getSelectedRow();
+   if(linha!=-1){
+       int id = (int) tabelaUsuario.getValueAt(linha, 0);
+       usuario=dao.pesquisar(id);
+       TelaUsuario tela = new TelaUsuario();
+       tela.carregarUsuario(usuario);
+       tela.setVisible(true);
+       dispose();
+   }else{
+       JOptionPane.showMessageDialog(null, "Selecione uma Linha!");
+   }
       
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -29,6 +29,13 @@ public class TelaUsuario extends javax.swing.JFrame {
         tfUsuario.setText("");
         tfSenha.setText("");
     }
+    public void carregarUsuario(Usuario usuario){ 
+       tfNome.setText(usuario.getNomeUsuario());
+       tfUsuario.setText(usuario.getLogin());
+       tfSenha.setText(usuario.getSenha());
+       this.usuario=usuario;
+       
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -165,6 +172,7 @@ public class TelaUsuario extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
